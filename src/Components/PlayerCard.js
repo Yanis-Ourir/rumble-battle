@@ -12,7 +12,7 @@ const PlayerCard = props => {
                 <div className="card-body text-center ff7">
                     <h5 className="card-title">{props.player.name}</h5>
                     <img src={props.player.image} className="img-fluid" alt={props.player.name} />
-                    <ProgressBar pv={props.player.pv} pvMax={props.player.pvMax} faType='fa-heart' barName=' : pv ' bgType='bg-danger' />
+                    <ProgressBar pv={props.player.pv} pvMax={props.player.pvMax} faType='fa-heart' barName=' : pv ' bgType='bg-danger'/>
                     <ProgressBar pv={props.player.mana} pvMax={props.player.manaMax} faType='fa-fire-alt' barName=' : mana ' />
 
                     <span className="badge badge-danger ml-2 " id="degatSpanJ1"></span>
@@ -22,7 +22,6 @@ const PlayerCard = props => {
                             <ButtonCapacity player={props.player} />
                             <ButtonCapacity player={props.player} />
                             <ButtonCapacity player={props.player} />
-
                         </div>
                     </div >
                 </div >

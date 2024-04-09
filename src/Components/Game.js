@@ -3,9 +3,9 @@ import './Game.css';
 import Monster from './Monster';
 import PlayerList from './PlayerList';
 
-//remplacer votre class App.js par cette notation
 const App = () => (
     <div className="App">
+        <h1>Final Fantasy Fight</h1>
         <Monster />
         <br></br>
         <section className="container-fluid">

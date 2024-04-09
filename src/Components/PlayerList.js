@@ -9,7 +9,7 @@ const PlayerList = () => {
     {players.map(player => (
       <PlayerCard key={player.id} player={player}/>
       ))
-    };
+    }
   </div>
 }
 

@@ -6,7 +6,6 @@ import Squall from '../../assets/Squall.gif';
 
 
 const initialState = {
-    // TODO : Compléter 'players' et 'monster'
     players: [
         {
             name: "Cloud",
@@ -15,6 +14,7 @@ const initialState = {
             pvMax: 100,
             mana: 30,
             manaMax: 30,
+            played: false,
             id: 1,
         },
         {
@@ -24,6 +24,7 @@ const initialState = {
             pvMax: 100,
             mana: 30,
             manaMax: 30,
+            played: false,
             id: 2,
         },
         {
@@ -33,15 +34,17 @@ const initialState = {
             pvMax: 100,
             mana: 30,
             manaMax: 30,
+            played: false,
             id: 3,
         },
         {
             name: "Terra",
             image: Terra,
-            pv: 100,
-            pvMax: 100,
-            mana: 30,
-            manaMax: 30,
+            pv: 80,
+            pvMax: 80,
+            mana: 50,
+            manaMax: 50,
+            played: false,
             id: 4,
         },
 
@@ -52,16 +55,22 @@ const initialState = {
         pvMax: 1000,
         image: "https://mooglestorage.blob.core.windows.net/images/2cee8fdf-f908-46c9-83d1-4b8b79ca642d.jpg",
         apiSlug: "sephiroth",
+        origin: "Final Fantasy VII"
     },
-};
 
+};
 
 export const fightSlice = createSlice({
     name: "fight",
     initialState,
     reducers: {
         hitMonster: (state, action) => {
-            state.monster.pv -= action.payload;
+            state.monster.pv -= action.payload.damage;
+            const player = state.players.find(player => player.id === action.payload.id);
+            player.played = true;
+            if(state.monster.pv <= 0){
+                state.monster.pv = 0;
+            }
         },
         hitBack: (state, action) => {
             const player = state.players.find(player => player.id === action.payload.id);
@@ -72,9 +81,22 @@ export const fightSlice = createSlice({
             state.monster.image = action.payload.image;
             state.monster.apiSlug = action.payload.apiSlug;
             state.monster.pv = state.monster.pvMax;
+            state.monster.origin = action.payload.origin;
+        },
+        updatePlayerTurn: (state) => {
+            if (state.players.every(player => player.played)) {
+                state.players.map(player => {
+                    player.played = false;
+                });
+            }
+            if(state.monster.pv <= 0){
+                state.players.map(player => {
+                    player.played = true;
+                });
+            }
         }
     },
 });
 
 export default fightSlice.reducer;
-export const { hitMonster, hitBack, updateMonster } = fightSlice.actions;
+export const { hitMonster, hitBack, updateMonster, updatePlayerTurn, checkPlayerTurn} = fightSlice.actions;
