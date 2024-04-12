@@ -129,8 +129,8 @@ Animation degats
     transform:  translate(-23px,-125px)  rotate(-60deg) ;
   }
   100% {
-      opacity:0;
-    transform:  translate(-23px,-200px)  ;
+    opacity:0;
+    transform:  translate(-23px,-200px);
   }
   101% {
     opacity:0;
@@ -154,11 +154,11 @@ Animation degats
   }
   73% {
     opacity:0.34;
-    -moz-transform:  translate(-23px,-125px)  rotate(-60deg) ;
+    -moz-transform:  translate(-23px,-125px)  rotate(-60deg);
   }
   100% {
       opacity:0;
-    -moz-transform:  translate(-23px,-200px)  ;
+    -moz-transform:  translate(-23px,-200px);
   }
   101% {
     opacity:0;
@@ -516,7 +516,7 @@ div.ff7-monster {
   0 -2px #9c9a9c,
   -2px 0 #7b757b,
   0 2px #424542;
-  width: 50%;
+  width: 800px;
   padding: 20px;
   margin: 30px 25px;
 
@@ -553,6 +553,15 @@ div.ff7 select option * {
   color: black;
 }
 
+section .container {
+  display: flex;
+  justify-content: center;
+}
+
+.ff7-monster {
+  width: 500px;
+}
+
 button {
   font-family: "Final Fantasy", serif;
   border: solid 1px #424542;
@@ -573,7 +582,7 @@ button {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#04009d', endColorstr='#06004d', GradientType=0);
   color: white;
   margin: 5px 5px;
-
+  width: 130px;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
@@ -583,61 +592,31 @@ button {
   transition-timing-function: linear;
 }
 
-div.ff7 button:hover {
+.change-button {
+  width: fit-content;
+  font-size: 0.8em;
+  height: 40px;
+  margin: 10px 10px;
+}
+
+button:hover {
     transform: scale(1.1);
+}
+
+button:disabled {
+  background: #424542;
+  color: #9c9a9c;
+  cursor: not-allowed;
 }
 
 .player-list {
   display: flex;
+  justify-content: center;
 }
 
 .monster-name {
     color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #testCarouselle {

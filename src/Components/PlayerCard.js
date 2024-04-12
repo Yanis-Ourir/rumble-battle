@@ -17,11 +17,11 @@ const PlayerCard = props => {
 
                     <span className="badge badge-danger ml-2 " id="degatSpanJ1"></span>
                     <div className="row ">
-                        <div >
-                            <ButtonCapacity player={props.player} />
-                            <ButtonCapacity player={props.player} />
-                            <ButtonCapacity player={props.player} />
-                            <ButtonCapacity player={props.player} />
+                        <div>
+                            <ButtonCapacity player={props.player} capacity={props.player.capacities[0]}/>
+                            <ButtonCapacity player={props.player} capacity={props.player.capacities[1]}/>
+                            <ButtonCapacity player={props.player} capacity={props.player.capacities[2]}/>
+                            <ButtonCapacity player={props.player} capacity={props.player.capacities[3]}/>
                         </div>
                     </div >
                 </div >

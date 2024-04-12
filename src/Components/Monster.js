@@ -2,11 +2,13 @@ import React from 'react';
 import ProgressBar from './ProgressBar';
 import {useDispatch, useSelector} from "react-redux";
 import RandomMonster from "../functions/RandomMonster";
+import { BiSolidSkull } from "react-icons/bi";
 
 
 const Monster = () => {
   const dispatch = useDispatch();
   const monster = useSelector(state => state.fight.monster);
+  const bossKilledNumber = useSelector(state => state.fight.bossKilledNumber);
 
   const monsters = ['sephiroth', 'kefka', 'seymour', 'ultimecia'];
   const randomMonster = monsters[Math.floor(Math.random() * monsters.length)];
@@ -27,20 +29,20 @@ const Monster = () => {
                     <div>
                       {monster.origin}
                     </div>
-                        {monster.pv > 0 && (
-                            <button onClick={() => RandomMonster(dispatch, randomMonster)} disabled={true}>
-                              <div>
+                      {monster.pv > 0 && (
+                          <button className="change-button" onClick={() => RandomMonster(dispatch, randomMonster)} disabled={true}>
+                            <div>
                               Change Boss
-                              </div>
-                            </button>
-                        )}
-                        {monster.pv <= 0 && (
-                            <button onClick={() => RandomMonster(dispatch, randomMonster)}>
-                              <div>
-                                Change Boss
-                              </div>
-                            </button>
-                        )}
+                            </div>
+                          </button>
+                      )}
+                      {monster.pv <= 0 && (
+                          <button className="change-button" onClick={() => RandomMonster(dispatch, randomMonster)}>
+                            <div>
+                              Change Boss
+                            </div>
+                          </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -49,7 +51,14 @@ const Monster = () => {
             </div>
           </div>
         </div>
+        <div className="d-flex justify-content-center">
+          <BiSolidSkull/>
+          <div>
+          Number of boss killed : {bossKilledNumber}
+          </div>
+        </div>
       </section>
+
     );
 }
 
