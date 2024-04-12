@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.24987b75.css",
+    "main.js": "/static/js/main.67a0c45f.js",
+    "static/media/Cloud_attack.gif": "/static/media/Cloud_attack.1b5b8214c9b0124f4a8d.gif",
+    "static/media/Tidus_attack.gif": "/static/media/Tidus_attack.c805f9fba93966431bdd.gif",
+    "static/media/Terra_attack.gif": "/static/media/Terra_attack.ca24a240887d48731d5a.gif",
+    "static/media/Squall_attack.gif": "/static/media/Squall_attack.29d0dcddc6d97bfc6620.gif",
+    "index.html": "/index.html",
+    "main.24987b75.css.map": "/static/css/main.24987b75.css.map",
+    "main.67a0c45f.js.map": "/static/js/main.67a0c45f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24987b75.css",
+    "static/js/main.67a0c45f.js"
+  ]
+}
