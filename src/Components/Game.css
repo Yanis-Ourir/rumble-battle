@@ -726,5 +726,45 @@ overflow: visible;
 }
 
 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) and (max-width : 700px) {
+  .player-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.ff7-monster {
+    width: 300px;
+  }
+}
+
+@media only screen
+and (min-width : 702px) and (max-width : 900px) {
+  .player-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+
+  div.ff7-monster {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width : 901px) and (max-width : 1364px){
+  .player-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+
+}
 
 

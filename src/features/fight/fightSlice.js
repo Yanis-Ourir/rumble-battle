@@ -30,7 +30,7 @@ const initialState = {
                     name: "Pierce Thrust",
                     damage: 50,
                     manaCost: 10,
-                    manaGain: 5,
+                    manaGain: 0,
                 },
                 {
                     name: "Triple Slash",
